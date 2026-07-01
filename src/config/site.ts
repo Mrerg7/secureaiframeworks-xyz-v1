@@ -7,7 +7,7 @@ export const SITE = {
   email: 'sales@desertrich.com',
   locale: 'en_US',
   location: 'Scottsdale, Arizona',
-  googleSiteVerification: '',
+  googleSiteVerification: 'B2wROJtYO2rvIFIKgDQ1MyNEuM5PJ2TGaBOLjrEx730',
 } as const;
 
 export const ACQUISITION_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent('Acquisition Inquiry - secureaiframeworks.xyz')}&body=${encodeURIComponent('Hello,\n\nI am interested in acquiring secureaiframeworks.xyz. Please provide details and next steps.\n\nBest regards,')}`;
