@@ -1,0 +1,16 @@
+name = "secureaiframeworks-xyz-v1"
+compatibility_date = "2026-07-01"
+workers_dev = false
+preview_urls = false
+
+[[routes]]
+pattern = "secureaiframeworks.xyz"
+custom_domain = true
+
+[[routes]]
+pattern = "www.secureaiframeworks.xyz"
+custom_domain = true
+
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-[#0a0a0f] text-white overflow-x-hidden antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-bg {
+    background-image: linear-gradient(rgba(10, 10, 15, 0.68), rgba(10, 10, 15, 0.75)),
+      url('https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .section-header {
+    @apply text-[2.65rem] leading-[1.05] font-semibold tracking-[-0.04em];
+  }
+
+  .domain-text {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.92;
+    font-weight: 700;
+    letter-spacing: -0.065em;
+    background: linear-gradient(90deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .modern-card {
+    @apply transition-all duration-300;
+  }
+  .modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-color: rgba(34, 245, 255, 0.3);
+  }
+
+  .form-input {
+    @apply transition-all duration-200;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: #22f5ff;
+    box-shadow: 0 0 0 3px rgba(34, 245, 255, 0.1);
+  }
+}
+
+@layer utilities {
+  .nav-scrolled {
+    @apply bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-white/5;
+  }
+}

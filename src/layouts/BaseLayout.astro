@@ -1,0 +1,168 @@
+---
+import '../styles/global.css';
+import { SITE, ACQUISITION_MAILTO } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SITE.url);
+const publishedDate = '2026-07-01';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      description,
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE.url}/#webpage`,
+      url: SITE.url,
+      name: title,
+      description,
+      isPartOf: { '@id': `${SITE.url}/#website` },
+      datePublished: publishedDate,
+      dateModified: publishedDate,
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'Product',
+      '@id': `${SITE.url}/#product`,
+      name: 'secureaiframeworks.xyz Premium Domain Name',
+      description:
+        'The modern domain for secure AI frameworks — a clean, contemporary digital asset for next-generation enterprise AI security and guardrails. Available for acquisition.',
+      url: SITE.url,
+      category: 'Premium Domain Name',
+      brand: {
+        '@type': 'Brand',
+        name: 'secureaiframeworks.xyz',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: ACQUISITION_MAILTO,
+        price: '9997',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: SITE.name,
+          email: SITE.email,
+        },
+        shippingDetails: {
+          '@type': 'OfferShippingDetails',
+          shippingRate: {
+            '@type': 'MonetaryAmount',
+            value: '0.00',
+            currency: 'USD',
+          },
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 0,
+              maxValue: 1,
+              unitCode: 'DAY',
+            },
+            transitTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 0,
+              maxValue: 0,
+              unitCode: 'DAY',
+            },
+          },
+          shippingDestination: {
+            '@type': 'DefinedRegion',
+            addressCountry: 'US',
+          },
+        },
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+          returnMethod: 'https://schema.org/ReturnByMail',
+          returnFees: 'https://schema.org/FreeReturn',
+          applicableCountry: 'US',
+          merchantReturnDays: 0,
+        },
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        bestRating: '5',
+        ratingCount: '1',
+      },
+      review: {
+        '@type': 'Review',
+        author: {
+          '@type': 'Organization',
+          name: SITE.name,
+        },
+        reviewBody:
+          'A clean, modern .xyz domain with powerful keyword relevance for the secure AI frameworks space — an outstanding digital identity for next-generation AI security.',
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      email: SITE.email,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Scottsdale',
+        addressRegion: 'AZ',
+        addressCountry: 'US',
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    {SITE.googleSiteVerification && (
+      <meta name="google-site-verification" content={SITE.googleSiteVerification} />
+    )}
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public" />
+    <meta property="og:locale" content={SITE.locale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,71 @@
+---
+import { ACQUISITION_MAILTO, SITE } from '../config/site';
+---
+
+<footer>
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Sophisticated Domain Acquisition CTA -->
+    <div class="relative overflow-hidden rounded-3xl border border-[#22f5ff]/25 bg-gradient-to-br from-[#0a0a0f] via-[#0f0f18] to-[#22f5ff]/5 p-8 sm:p-12 mb-12">
+      <div
+        class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#22f5ff]/10 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-[#a855f7]/10 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+        <div>
+          <p class="text-xs uppercase tracking-[3px] text-[#22f5ff] font-extrabold mb-4">Domain Available for Acquisition</p>
+          <h2 class="font-display text-3xl sm:text-4xl tracking-tight text-white mb-4">
+            secureaiframeworks.xyz — A Category-Defining Digital Asset
+          </h2>
+          <p class="text-white/70 max-w-xl leading-relaxed">
+            Positioned at the exact intersection of next-generation AI security and premium digital identity,
+            this domain is a rare strategic asset for modern, forward-thinking organizations. Serious buyers may
+            inquire for pricing, transfer logistics, and escrow options.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-6 sm:p-8 border border-white/10 bg-white/5" style="backdrop-filter: blur(22px);">
+          <p class="text-xs uppercase tracking-[2px] text-white/50 font-semibold mb-2">Acquisition Contact</p>
+          <a
+            href={ACQUISITION_MAILTO}
+            class="block text-2xl sm:text-3xl font-display text-[#22f5ff] hover:text-[#6ee7ff] transition-colors break-all"
+          >
+            {SITE.email}
+          </a>
+          <a
+            href={ACQUISITION_MAILTO}
+            class="mt-6 inline-flex w-full items-center justify-center gap-x-3 px-6 py-4 bg-gradient-to-r from-[#22f5ff] to-[#a855f7] hover:brightness-110 text-[#0a0a0f] font-extrabold rounded-2xl transition-all active:scale-[0.985]"
+          >
+            <span>Inquire About Acquisition</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M14 5l7 7-7 7m-4-7h11" />
+            </svg>
+          </a>
+          <p class="mt-4 text-[11px] text-white/40 text-center tracking-wide">
+            Confidential inquiries • Response within 24 hours
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="text-xs text-white/40 leading-relaxed max-w-4xl mb-10">
+      This website is for demonstration and informational purposes only. It does not constitute an offer of services,
+      a commitment to deploy, or a guarantee of outcomes. All statistics, projections, and references to specific
+      technologies are based on publicly available information as of July 1, 2026 and are subject to change.
+    </p>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 border-t border-white/10 text-xs text-white/50 flex flex-col md:flex-row gap-y-4 items-center justify-between">
+      <div>&copy; 2026 secureaiframeworks.xyz. All rights reserved.</div>
+      <div class="flex items-center gap-x-5">
+        <span>Premium domain listing by owner</span>
+        <span>Transactions secured via <span class="text-white/70 font-medium">Escrow.com</span></span>
+      </div>
+    </div>
+  </div>
+</footer>

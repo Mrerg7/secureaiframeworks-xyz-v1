@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="secureaiframeworks.xyz — The modern domain for secure AI frameworks. A clean, modern, high-conversion landing page for innovative, next-generation enterprise AI security and guardrails.">
+    <meta name="keywords" content="secure AI frameworks, modern AI security, next-gen AI security, AI guardrails, trustworthy AI, enterprise AI security">
+    <meta property="og:title" content="secureaiframeworks.xyz | Modern Secure AI Frameworks — Premium Domain">
+    <meta property="og:description" content="The modern, tech-forward domain for secure AI frameworks.">
+    <meta property="og:image" content="hero-bg.jpg">
+    <meta property="og:url" content="https://secureaiframeworks.xyz">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>secureaiframeworks.xyz | Modern Secure AI Frameworks — Premium Domain</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 15, 0.68), rgba(10, 10, 15, 0.75)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-header {
+            font-size: 2.65rem;
+            line-height: 1.05;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+        }
+
+        .nav-scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .domain-text {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 0.92;
+            font-weight: 700;
+            letter-spacing: -0.065em;
+            background: linear-gradient(90deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #22f5ff;
+            transform: translateY(-1px);
+        }
+
+        .modern-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
+                        border-color 0.3s ease;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: rgba(34, 245, 255, 0.3);
+        }
+
+        .form-input {
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #22f5ff;
+            box-shadow: 0 0 0 3px rgba(34, 245, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0f] text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#22f5ff] via-[#a855f7] to-[#22f5ff] p-px">
+                        <div class="w-full h-full bg-[#0a0a0f] rounded-2xl flex items-center justify-center">
+                            <span class="text-[#22f5ff] text-lg font-bold tracking-tighter">SAF</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-display text-2xl font-semibold tracking-tighter">secureaiframeworks.xyz</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#positioning" class="nav-link text-white/80 hover:text-white">The Opportunity</a>
+                    <a href="#why" class="nav-link text-white/80 hover:text-white">Why This Domain</a>
+                    <a href="#uses" class="nav-link text-white/80 hover:text-white">Ideal For</a>
+                    <a href="#pricing" class="nav-link text-white/80 hover:text-white">Pricing</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center gap-x-3">
+                    <a href="#inquire" 
+                       class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-2xl border border-white/20 hover:bg-white/5 transition-colors">
+                        Inquire
+                    </a>
+                    <a href="#inquire" 
+                       class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-2xl bg-white text-[#0a0a0f] hover:bg-white/90 transition-all active:scale-[0.985]">
+                        Secure Now
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                            aria-label="Toggle menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#0a0a0f] pt-20">
+        <div class="px-6 py-8 flex flex-col gap-y-6 text-lg font-medium">
+            <a href="#positioning" class="mobile-nav-link py-2">The Opportunity</a>
+            <a href="#why" class="mobile-nav-link py-2">Why This Domain</a>
+            <a href="#uses" class="mobile-nav-link py-2">Ideal For</a>
+            <a href="#pricing" class="mobile-nav-link py-2">Pricing</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="#inquire" class="block w-full text-center py-3.5 rounded-2xl bg-white text-[#0a0a0f] font-semibold">Secure This Domain</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-[100dvh] flex items-center relative pt-20">
+        <div class="max-w-5xl mx-auto px-6 pb-16 pt-12 md:pt-8 text-center relative z-10">
+            <!-- Premium Badge -->
+            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
+                <div class="w-1.5 h-1.5 bg-[#22f5ff] rounded-full animate-pulse"></div>
+                <span class="text-xs font-semibold tracking-[1.5px] text-white/80">MODERN AI SECURITY DOMAIN</span>
+            </div>
+
+            <!-- Domain Name -->
+            <h1 class="domain-text font-display mb-3 tracking-[-0.07em]">
+                secureaiframeworks.xyz
+            </h1>
+
+            <!-- Tagline -->
+            <p class="max-w-2xl mx-auto text-3xl md:text-4xl font-light tracking-tight text-white/90 mb-4">
+                The modern domain<br>
+                for secure AI frameworks.
+            </p>
+            
+            <p class="max-w-lg mx-auto text-xl text-white/70 mb-10">
+                Forward-thinking. Tech-native.<br>
+                Built for the next generation of AI security.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#inquire" 
+                   class="group w-full sm:w-auto inline-flex items-center justify-center gap-x-3 px-9 py-4 text-lg font-semibold rounded-3xl bg-gradient-to-r from-[#22f5ff] to-[#a855f7] text-[#0a0a0f] hover:brightness-105 active:scale-[0.985] transition-all shadow-xl shadow-[#22f5ff]/20">
+                    <span>Secure This Asset</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M14 5l7 7-7 7m-4-7h11" />
+                    </svg>
+                </a>
+                <a href="#positioning" 
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-x-2 px-8 py-4 text-lg font-medium rounded-3xl border border-white/20 hover:bg-white/5 transition-colors">
+                    Explore the Opportunity
+                </a>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center gap-x-8 text-xs text-white/50">
+                <div class="flex items-center gap-x-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7" />
+                    </svg>
+                    <span>Instant Transfer</span>
+                </div>
+                <div>Escrow Protected</div>
+                <div>Modern &amp; Forward-Thinking</div>
+            </div>
+        </div>
+
+        <!-- Subtle scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
+            <div class="flex flex-col items-center gap-y-1 text-[10px] tracking-widest text-white/40">
+                <div>SCROLL TO BEGIN</div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Opportunity / Positioning Section -->
+    <section id="positioning" class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+        <div class="grid md:grid-cols-12 gap-x-12 items-center">
+            <!-- Left content -->
+            <div class="md:col-span-7">
+                <div class="inline-block px-3.5 py-1 rounded-full bg-white/5 text-xs tracking-[1.5px] font-medium text-white/60 mb-4">THE OPPORTUNITY</div>
+                
+                <h2 class="section-header tracking-[-0.04em] leading-none mb-7">
+                    The next generation<br>
+                    needs new standards.
+                </h2>
+                
+                <div class="space-y-6 text-lg text-white/80 max-w-[42ch]">
+                    <p>
+                        As AI capabilities accelerate, the organizations building the future need secure frameworks that are as modern, adaptable, and forward-thinking as the systems they protect.
+                    </p>
+                    <p>
+                        <span class="font-semibold text-white">secureaiframeworks.xyz</span> is the clean, contemporary domain for next-generation secure AI frameworks — tools, platforms, and approaches designed for the teams shaping what comes next.
+                    </p>
+                    <p class="text-white/70">
+                        It signals innovation, tech fluency, and a commitment to building security that keeps pace with rapid AI advancement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right visual card -->
+            <div class="md:col-span-5 mt-10 md:mt-0">
+                <div class="glass rounded-3xl p-9 md:p-10 border border-white/10">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#22f5ff20] to-[#a855f720] border border-white/20 mb-6">
+                            <span class="font-display text-sm font-bold tracking-[-0.5px] bg-gradient-to-br from-[#22f5ff] to-[#a855f7] bg-clip-text text-transparent">XYZ</span>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <div class="text-3xl font-bold tracking-tighter">Secure AI Frameworks</div>
+                            <div class="text-sm text-white/60 tracking-[2px] mt-1">MODERN • INNOVATIVE • NEXT-GEN</div>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-white/10 text-sm text-white/60 leading-relaxed">
+                            The domain for teams<br>
+                            building what comes next.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Domain Section -->
+    <section id="why" class="bg-white/5 border-y border-white/10 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 rounded-full bg-white/5 text-xs tracking-[1.5px] font-medium text-white/60 mb-3">WHY THIS DOMAIN</div>
+                <h2 class="section-header tracking-[-0.03em]">Modern. Clean. Forward-thinking.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <!-- Card 1 -->
+                <div class="modern-card glass rounded-3xl p-8 border border-white/10">
+                    <div class="w-11 h-11 rounded-2xl bg-[#22f5ff]/10 flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#22f5ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 8.944 11.922a12.024 12.024 0 01-4.462-8.968" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl tracking-tight mb-3">Contemporary &amp; Tech-Native</h3>
+                    <p class="text-white/70 leading-relaxed">The .xyz TLD gives this domain a fresh, modern, and innovative feel. It resonates with startups, cutting-edge teams, and organizations that want their brand to reflect the future rather than the past.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="modern-card glass rounded-3xl p-8 border border-white/10">
+                    <div class="w-11 h-11 rounded-2xl bg-[#a855f7]/10 flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#a855f7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2.009 2.009 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl tracking-tight mb-3">Clean &amp; Memorable</h3>
+                    <p class="text-white/70 leading-relaxed"><span class="font-medium">secureaiframeworks.xyz</span> is short, clear, and easy to remember. The .xyz extension keeps it light and contemporary while maintaining full keyword relevance.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="modern-card glass rounded-3xl p-8 border border-white/10">
+                    <div class="w-11 h-11 rounded-2xl bg-emerald-400/10 flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl tracking-tight mb-3">Strong for Innovation-Focused Buyers</h3>
+                    <p class="text-white/70 leading-relaxed">Teams working on next-generation AI security solutions often prefer modern, forward-looking branding. This domain aligns perfectly with that mindset and can attract high-quality, innovation-driven buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal For / Use Cases -->
+    <section id="uses" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="max-w-2xl mb-12">
+            <div class="inline-block px-3.5 py-1 rounded-full bg-white/5 text-xs tracking-[1.5px] font-medium text-white/60 mb-4">IDEAL FOR</div>
+            <h2 class="section-header tracking-[-0.035em] leading-none">The modern choice for next-generation secure AI.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">01</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Next-Gen AI Security Platforms</div>
+                <p class="text-sm text-white/60">Ideal flagship domain for modern platforms building innovative guardrails, safety layers, or runtime security for advanced AI systems.</p>
+            </div>
+            
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">02</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Startup &amp; Scale-Up AI Security</div>
+                <p class="text-sm text-white/60">Perfect for fast-moving companies and startups that want a contemporary, tech-native brand in the secure AI space.</p>
+            </div>
+            
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">03</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Open-Source Secure AI Frameworks</div>
+                <p class="text-sm text-white/60">Strong positioning for modern open-source projects or communities building the next generation of secure, trustworthy AI tooling.</p>
+            </div>
+            
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">04</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Developer-First AI Security Tools</div>
+                <p class="text-sm text-white/60">Excellent for tools and platforms designed for developers who want modern, easy-to-integrate secure AI frameworks.</p>
+            </div>
+            
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">05</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Innovation Labs &amp; Research</div>
+                <p class="text-sm text-white/60">Ideal for research labs, innovation teams, or forward-thinking organizations focused on the future of secure and responsible AI.</p>
+            </div>
+            
+            <div class="group p-7 rounded-3xl border border-white/10 hover:border-white/20 transition-colors bg-white/[0.015]">
+                <div class="font-mono text-xs tracking-widest text-[#22f5ff] mb-2">06</div>
+                <div class="font-semibold text-lg mb-2 group-hover:text-[#22f5ff] transition-colors">Modern AI Governance &amp; Compliance</div>
+                <p class="text-sm text-white/60">Great for contemporary platforms helping organizations adopt secure, compliant, and future-proof AI practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poignant Closer -->
+    <div class="max-w-3xl mx-auto px-6 text-center py-8 border-y border-white/10">
+        <p class="text-2xl md:text-3xl font-light tracking-tight text-white/90">
+            The future of AI security<br>
+            deserves a modern foundation.
+        </p>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="max-w-4xl mx-auto px-6 py-20">
+        <div class="text-center mb-10">
+            <div class="inline-block px-4 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-xs tracking-[1.5px] font-semibold mb-4">PREMIUM ACQUISITION</div>
+            <h2 class="section-header tracking-[-0.03em]">A clean, modern asset for forward-thinking teams.</h2>
+        </div>
+
+        <div class="glass rounded-3xl p-10 md:p-14 border border-white/10">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-8">
+                <div>
+                    <div class="flex items-baseline gap-x-2">
+                        <span class="text-6xl md:text-7xl font-semibold tracking-tighter">$9,997</span>
+                        <span class="text-white/50 text-xl">USD</span>
+                    </div>
+                    <p class="mt-1 text-white/60">One-time acquisition • Full ownership &amp; instant transfer</p>
+                    
+                    <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                        <div class="flex items-center gap-x-2 text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Clean title, ready for transfer</span>
+                        </div>
+                        <div class="flex items-center gap-x-2 text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Escrow.com protected transaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:text-right">
+                    <a href="#inquire" 
+                       class="inline-flex w-full md:w-auto items-center justify-center px-10 py-4 rounded-3xl bg-white font-semibold text-[#0a0a0f] text-lg active:scale-[0.985] transition-all hover:bg-white/90">
+                        Begin Acquisition
+                    </a>
+                    <p class="text-xs text-white/50 mt-3 md:mt-2">Serious buyers only. Flexible terms available.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-xs text-white/50 max-w-md mx-auto">
+                Modern, clean .xyz domains with strong keyword relevance in emerging tech categories offer excellent brand value for forward-thinking teams.
+            </p>
+        </div>
+    </section>
+
+    <!-- Inquiry / Contact Section -->
+    <section id="inquire" class="bg-white/5 border-t border-white/10 py-16">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-semibold tracking-tight">Ready to own the modern domain for secure AI?</h2>
+                <p class="mt-3 text-white/70">Submit your inquiry. We respond personally to serious buyers within 24 hours.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="inquiry-form" class="glass rounded-3xl p-8 md:p-10 border border-white/10 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">FULL NAME</label>
+                        <input type="text" id="name" required 
+                               class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:border-[#22f5ff]/60">
+                    </div>
+                    <div>
+                        <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">EMAIL ADDRESS</label>
+                        <input type="email" id="email" required 
+                               class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:border-[#22f5ff]/60">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">ORGANIZATION OR INTENDED USE (OPTIONAL)</label>
+                    <input type="text" id="org" 
+                           class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40 focus:border-[#22f5ff]/60">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">YOUR OFFER (OPTIONAL)</label>
+                        <div class="relative">
+                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-white/40">$</span>
+                            <input type="text" id="offer" placeholder="9997" 
+                                   class="form-input w-full bg-white/5 border border-white/15 rounded-2xl pl-8 pr-5 py-3.5 text-white placeholder:text-white/40 focus:border-[#22f5ff]/60">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">TIMELINE</label>
+                        <select id="timeline" class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-[15px] text-white focus:border-[#22f5ff]/60">
+                            <option value="">Select preferred timeline</option>
+                            <option value="immediate">Immediate (within 7 days)</option>
+                            <option value="2weeks">Within 2 weeks</option>
+                            <option value="month">Within 30 days</option>
+                            <option value="flexible">Flexible / exploring</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">MESSAGE OR QUESTIONS</label>
+                    <textarea id="message" rows="4" placeholder="What is your vision for secureaiframeworks.xyz?" 
+                              class="form-input w-full bg-white/5 border border-white/15 rounded-3xl px-5 py-4 text-white placeholder:text-white/40 focus:border-[#22f5ff]/60 resize-y min-h-[110px]"></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="w-full py-4 rounded-3xl bg-gradient-to-r from-[#22f5ff] to-[#a855f7] font-semibold text-[#0a0a0f] text-lg tracking-[-0.2px] active:scale-[0.985] transition-all hover:brightness-105">
+                    Submit Secure Inquiry
+                </button>
+
+                <p class="text-center text-[10px] text-white/50 tracking-wide">Your information is kept confidential. All transactions protected via escrow.</p>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="success-message" class="hidden mt-6 glass rounded-3xl p-8 border border-emerald-400/30 text-center">
+                <div class="mx-auto w-14 h-14 rounded-full bg-emerald-400/10 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V3" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold tracking-tight mb-2">Inquiry Received</h3>
+                <p class="text-white/70 max-w-xs mx-auto">Thank you. A member of our team will personally respond within 24 hours to discuss next steps.</p>
+                <button onclick="resetForm()" 
+                        class="mt-6 text-sm font-medium text-white/60 hover:text-white underline underline-offset-4">Submit another inquiry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Footer Bar -->
+    <div class="border-t border-white/10 py-5">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-y-3 text-xs text-white/50">
+            <div>Transactions secured via <span class="font-medium text-white/70">Escrow.com</span> • Premium domain brokerage</div>
+            <div>© 2026 secureaiframeworks.xyz • All rights reserved</div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll behavior
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-nav-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('svg');
+                if (!menu.classList.contains('hidden')) {
+                    icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6h12v12" />`;
+                } else {
+                    icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+                }
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('svg');
+                    icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+                });
+            });
+        }
+
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Form handling
+        function initForm() {
+            const form = document.getElementById('inquiry-form');
+            const successMsg = document.getElementById('success-message');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = 'Processing...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    successMsg.classList.remove('hidden');
+                    successMsg.classList.add('block');
+                    
+                    console.log('%c[secureaiframeworks.xyz] New inquiry submitted:', 'color:#64748b', {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        org: document.getElementById('org').value,
+                        offer: document.getElementById('offer').value,
+                        timeline: document.getElementById('timeline').value,
+                        message: document.getElementById('message').value
+                    });
+                }, 850);
+            });
+        }
+
+        function resetForm() {
+            const form = document.getElementById('inquiry-form');
+            const successMsg = document.getElementById('success-message');
+            
+            successMsg.classList.add('hidden');
+            successMsg.classList.remove('block');
+            form.style.display = 'block';
+            form.reset();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Secure Inquiry';
+            }
+        }
+
+        // Keyboard accessibility
+        function initKeyboardControls() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const menu = document.getElementById('mobile-menu');
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // Initialize everything
+        function initializeSite() {
+            initNavbar();
+            initMobileMenu();
+            initSmoothScroll();
+            initForm();
+            initKeyboardControls();
+
+            console.log('%c[secureaiframeworks.xyz] Premium domain landing page initialized. Modern, forward-thinking positioning.', 'color:#475569; font-size: 9px');
+            
+            // Preload hero image
+            const img = new Image();
+            img.src = 'hero-bg.jpg';
+        }
+
+        window.onload = initializeSite;
+    </script>
+</body>
+</html>
