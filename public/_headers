@@ -1,4 +1,9 @@
 /
+  X-Robots-Tag: index, follow, max-image-preview:large
+  Link: <https://secureaiframeworks.xyz/>; rel="canonical"
+
+/index.html
+  X-Robots-Tag: index, follow, max-image-preview:large
   Link: <https://secureaiframeworks.xyz/>; rel="canonical"
 
 /sitemap-index.xml
@@ -6,3 +11,9 @@
 
 /sitemap-0.xml
   Content-Type: application/xml; charset=utf-8
+
+/404
+  X-Robots-Tag: noindex, nofollow
+
+/404.html
+  X-Robots-Tag: noindex, nofollow
