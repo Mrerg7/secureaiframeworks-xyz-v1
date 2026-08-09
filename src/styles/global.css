@@ -5,12 +5,21 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply font-sans bg-[#0a0a0f] text-white overflow-x-hidden antialiased;
   }
 
-  html {
-    scroll-behavior: smooth;
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -26,7 +35,13 @@
       url('https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
+  }
+
+  @media (min-width: 768px) {
+    .hero-bg {
+      background-attachment: fixed;
+    }
   }
 
   .glass {
@@ -34,7 +49,7 @@
   }
 
   .section-header {
-    @apply text-[2.65rem] leading-[1.05] font-semibold tracking-[-0.04em];
+    @apply text-[clamp(1.85rem,6vw,2.65rem)] leading-[1.05] font-semibold tracking-[-0.04em];
   }
 
   .domain-text {

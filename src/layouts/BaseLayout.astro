@@ -14,7 +14,14 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, SITE.url);
+// Always emit the apex https origin with a trailing slash so alternate hosts/paths
+// consolidate to one indexable URL in Search Console.
+const pathname = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html'
+  ? '/'
+  : Astro.url.pathname.endsWith('/')
+    ? Astro.url.pathname
+    : `${Astro.url.pathname}/`;
+const canonicalURL = new URL(pathname, SITE.url).href;
 const publishedDate = '2026-07-01';
 
 const structuredData = {
@@ -23,7 +30,7 @@ const structuredData = {
     {
       '@type': 'WebSite',
       '@id': `${SITE.url}/#website`,
-      url: SITE.url,
+      url: `${SITE.url}/`,
       name: SITE.name,
       description,
       inLanguage: 'en-US',
@@ -31,7 +38,7 @@ const structuredData = {
     {
       '@type': 'WebPage',
       '@id': `${SITE.url}/#webpage`,
-      url: SITE.url,
+      url: `${SITE.url}/`,
       name: title,
       description,
       isPartOf: { '@id': `${SITE.url}/#website` },
@@ -135,7 +142,8 @@ const structuredData = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
     {SITE.googleSiteVerification && (
       <meta name="google-site-verification" content={SITE.googleSiteVerification} />

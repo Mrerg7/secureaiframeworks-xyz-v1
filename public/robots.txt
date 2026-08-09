@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /404
+Disallow: /404/
 Disallow: /404.html
+Disallow: /index.html
+Disallow: /index
+Disallow: /secureaiframeworks-xyz.html
 Disallow: /_astro/
 
 Sitemap: https://secureaiframeworks.xyz/sitemap-index.xml
