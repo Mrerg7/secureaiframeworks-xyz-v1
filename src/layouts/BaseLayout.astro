@@ -23,6 +23,7 @@ const pathname = Astro.url.pathname === '/' || Astro.url.pathname === '/index.ht
     : `${Astro.url.pathname}/`;
 const canonicalURL = new URL(pathname, SITE.url).href;
 const publishedDate = '2026-07-01';
+const modifiedDate = '2026-09-22';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -34,6 +35,7 @@ const structuredData = {
       name: SITE.name,
       description,
       inLanguage: 'en-US',
+      publisher: { '@id': `${SITE.url}/#organization` },
     },
     {
       '@type': 'WebPage',
@@ -43,90 +45,52 @@ const structuredData = {
       description,
       isPartOf: { '@id': `${SITE.url}/#website` },
       datePublished: publishedDate,
-      dateModified: publishedDate,
+      dateModified: modifiedDate,
       inLanguage: 'en-US',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: SITE.ogImage,
+        caption: SITE.ogImageAlt,
+      },
     },
     {
       '@type': 'Product',
       '@id': `${SITE.url}/#product`,
       name: 'secureaiframeworks.xyz Premium Domain Name',
       description:
-        'The modern domain for secure AI frameworks — a clean, contemporary digital asset for next-generation enterprise AI security and guardrails. Available for acquisition.',
-      url: SITE.url,
+        'The modern domain for secure AI frameworks — a clean, contemporary digital asset for next-generation enterprise AI security, guardrails, and AI governance. Available for acquisition.',
+      url: `${SITE.url}/`,
       category: 'Premium Domain Name',
+      image: SITE.ogImage,
       brand: {
         '@type': 'Brand',
         name: 'secureaiframeworks.xyz',
       },
       offers: {
         '@type': 'Offer',
-        url: ACQUISITION_MAILTO,
-        price: '9997',
-        priceCurrency: 'USD',
+        url: `${SITE.url}/#pricing`,
+        price: SITE.price,
+        priceCurrency: SITE.priceCurrency,
         availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        priceValidUntil: '2027-12-31',
         seller: {
           '@type': 'Organization',
           name: SITE.name,
+          url: `${SITE.url}/`,
           email: SITE.email,
         },
-        shippingDetails: {
-          '@type': 'OfferShippingDetails',
-          shippingRate: {
-            '@type': 'MonetaryAmount',
-            value: '0.00',
-            currency: 'USD',
-          },
-          deliveryTime: {
-            '@type': 'ShippingDeliveryTime',
-            handlingTime: {
-              '@type': 'QuantitativeValue',
-              minValue: 0,
-              maxValue: 1,
-              unitCode: 'DAY',
-            },
-            transitTime: {
-              '@type': 'QuantitativeValue',
-              minValue: 0,
-              maxValue: 0,
-              unitCode: 'DAY',
-            },
-          },
-          shippingDestination: {
-            '@type': 'DefinedRegion',
-            addressCountry: 'US',
-          },
-        },
-        hasMerchantReturnPolicy: {
-          '@type': 'MerchantReturnPolicy',
-          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-          returnMethod: 'https://schema.org/ReturnByMail',
-          returnFees: 'https://schema.org/FreeReturn',
-          applicableCountry: 'US',
-          merchantReturnDays: 0,
-        },
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5',
-        bestRating: '5',
-        ratingCount: '1',
-      },
-      review: {
-        '@type': 'Review',
-        author: {
-          '@type': 'Organization',
-          name: SITE.name,
-        },
-        reviewBody:
-          'A clean, modern .xyz domain with powerful keyword relevance for the secure AI frameworks space — an outstanding digital identity for next-generation AI security.',
+        eligibleTransactionType: 'https://schema.org/FullPurchaseTransaction',
       },
     },
     {
       '@type': 'Organization',
       '@id': `${SITE.url}/#organization`,
       name: SITE.name,
-      url: SITE.url,
+      url: `${SITE.url}/`,
       email: SITE.email,
+      description:
+        'Owner and seller of the secureaiframeworks.xyz premium domain name.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Scottsdale',
@@ -145,6 +109,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0a0a0f" />
     {SITE.googleSiteVerification && (
       <meta name="google-site-verification" content={SITE.googleSiteVerification} />
     )}
@@ -159,18 +124,40 @@ const structuredData = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public" />
+    <meta property="og:image" content={SITE.ogImage} />
+    <meta property="og:image:alt" content={SITE.ogImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={SITE.locale} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public" />
+    <meta name="twitter:image" content={SITE.ogImage} />
+    <meta name="twitter:image:alt" content={SITE.ogImageAlt} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+    <link rel="preload" as="image" href={SITE.ogImage} />
+
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-white focus:text-[#0a0a0f] focus:font-semibold"
+    >
+      Skip to content
+    </a>
     <slot />
   </body>
 </html>
