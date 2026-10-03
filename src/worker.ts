@@ -1,8 +1,11 @@
 /**
- * Canonical host / path enforcement for static assets.
+ * Canonical host / path enforcement + security & cache headers for static assets.
  * Runs before assets (run_worker_first) so www/http/index.html variants 301 to
  * https://secureaiframeworks.xyz/ instead of serving duplicate HTML that GSC
  * reports as "Alternate page with proper canonical tag".
+ *
+ * Stays within the Cloudflare Workers & Pages free plan: no KV/D1/R2 bindings,
+ * static-asset serving only.
  */
 const CANONICAL_ORIGIN = 'https://secureaiframeworks.xyz';
 const CANONICAL_HOST = 'secureaiframeworks.xyz';
@@ -45,6 +48,47 @@ function getCanonicalRedirect(request: Request): string | null {
   return needsRedirect ? canonical.toString() : null;
 }
 
+function applySecurityHeaders(res: Response, url: URL): Response {
+  const headers = new Headers(res.headers);
+  // Baseline hardening (free-plan friendly, no CSP breakage for inline Astro scripts:
+  // inline scripts are same-origin; external limited to fonts + images + CF beacon).
+  headers.set('X-Content-Type-Options', 'nosniff');
+  headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  headers.set(
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
+  );
+  headers.set('X-Frame-Options', 'SAMEORIGIN');
+  if (url.protocol === 'https:') {
+    headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  }
+  headers.set(
+    'Content-Security-Policy',
+    [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "img-src 'self' data: https://imagedelivery.net",
+      "connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com",
+      "frame-ancestors 'self'",
+      "base-uri 'self'",
+      "form-action 'self' mailto:",
+    ].join('; '),
+  );
+  // Long-cache immutable build assets for <2s repeat visits on cellular.
+  if (url.pathname.startsWith('/_astro/')) {
+    headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  } else if (/\.(svg|ico|png|jpg|jpeg|webp|avif|css|js)$/.test(url.pathname)) {
+    headers.set('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+  }
+  return new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers,
+  });
+}
+
 async function notFoundResponse(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);
   const assetResponse = await env.ASSETS.fetch(
@@ -56,6 +100,9 @@ async function notFoundResponse(request: Request, env: Env): Promise<Response> {
       'Content-Type': 'text/html; charset=utf-8',
       'X-Robots-Tag': 'noindex',
       'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'X-Frame-Options': 'SAMEORIGIN',
     },
   });
 }
@@ -73,6 +120,11 @@ export default {
       return Response.redirect(redirectUrl, 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+    // Preserve noindex on 404-family responses; otherwise decorate with hardening.
+    if (assetResponse.status === 404) {
+      return notFoundResponse(request, env);
+    }
+    return applySecurityHeaders(assetResponse, url);
   },
 } satisfies ExportedHandler<Env>;

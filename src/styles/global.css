@@ -7,6 +7,7 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    font-size: 16px;
   }
 
   body {
@@ -18,6 +19,29 @@
   svg {
     max-width: 100%;
     height: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid #22f5ff;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Light-mode theme (toggle via [data-theme="light"] on <html>) */
+  html[data-theme='light'] body {
+    @apply bg-white text-slate-900;
+  }
+  html[data-theme='light'] .glass {
+    @apply bg-slate-900/[0.04] border-slate-900/10 backdrop-blur-xl;
+  }
+  html[data-theme='light'] .hero-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.88)),
+      url('https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/9f2037fc-76ea-47d8-d0d1-1da6c6936a00/public');
+  }
+  html[data-theme='light'] .domain-text {
+    background: linear-gradient(90deg, #0f172a, #4c1d95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -77,10 +101,45 @@
     border-color: #22f5ff;
     box-shadow: 0 0 0 3px rgba(34, 245, 255, 0.1);
   }
+
+  /* Scroll-reveal animation (progressive enhancement; .reveal starts visible if JS off via no-js fallback below) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @layer utilities {
   .nav-scrolled {
     @apply bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-white/5;
+  }
+}
+
+/* If JS is disabled, never hide content */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect users who prefer reduced motion (a11y + perf) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

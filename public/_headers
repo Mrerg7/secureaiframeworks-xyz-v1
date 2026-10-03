@@ -1,9 +1,10 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://imagedelivery.net; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:
 
 /
   X-Robots-Tag: index, follow, max-image-preview:large
@@ -11,9 +12,17 @@
 
 /sitemap-index.xml
   Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /sitemap-0.xml
   Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /404
   X-Robots-Tag: noindex, nofollow

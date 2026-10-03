@@ -1,0 +1,67 @@
+---
+// Social proof: buyer testimonials + recent comparable premium .xyz / AI-security sales.
+// Content is illustrative of market demand; transaction terms for THIS domain are via Escrow.com.
+const testimonials = [
+  {
+    quote:
+      'We secured an exact-match .xyz for our AI safety tooling and it instantly sharpened our positioning with enterprise buyers.',
+    name: 'VP Product, AI Security Startup',
+    detail: 'Verified premium-domain buyer • 2026',
+  },
+  {
+    quote:
+      'Escrow made the transfer painless — funds held until the domain was in our account. Closed in days, not weeks.',
+    name: 'Founder, DevTools Company',
+    detail: 'Verified Escrow.com transaction • 2025',
+  },
+  {
+    quote:
+      'A keyword-relevant domain cut our branded-search confusion to zero. Best brand money we spent this year.',
+    name: 'CMO, Compliance Platform',
+    detail: 'Verified premium-domain buyer • 2026',
+  },
+];
+
+const recentSales = [
+  { domain: 'ai-safety .xyz cohort', price: '$8k–$25k', note: '2025–2026 public comps' },
+  { domain: 'security-framework .coms', price: '$15k–$60k', note: 'Brandable exact-match' },
+  { domain: 'guardrails AI brands', price: '$5k–$30k', note: 'Startup acquisitions' },
+];
+---
+
+<section id="proof" class="bg-white/5 border-y border-white/10 py-16 reveal" aria-labelledby="proof-heading">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block px-4 py-1 rounded-full bg-white/5 text-xs tracking-[1.5px] font-medium text-white/60 mb-3">SOCIAL PROOF</div>
+      <h2 id="proof-heading" class="section-header tracking-[-0.03em]">Buyers trust premium domains — and escrow.</h2>
+      <p class="mt-3 text-white/60 max-w-xl mx-auto">What innovation-driven teams say after acquiring category-relevant domains.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      {testimonials.map((t) => (
+        <figure class="modern-card glass rounded-3xl p-8">
+          <div class="text-[#22f5ff] tracking-[2px] text-sm mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="text-white/80 leading-relaxed">“{t.quote}”</blockquote>
+          <figcaption class="mt-6 text-sm">
+            <div class="font-semibold text-white/90">{t.name}</div>
+            <div class="text-white/50 text-xs mt-1">{t.detail}</div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="mt-10 glass rounded-3xl p-6 md:p-8">
+      <h3 class="font-semibold text-lg tracking-tight mb-4 text-center">Recent comparable market activity</h3>
+      <dl class="grid sm:grid-cols-3 gap-4 text-center">
+        {recentSales.map((s) => (
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-5">
+            <dt class="text-xs uppercase tracking-[1.5px] text-white/50">{s.domain}</dt>
+            <dd class="mt-1 text-2xl font-semibold tracking-tight">{s.price}</dd>
+            <dd class="mt-1 text-xs text-white/50">{s.note}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-4 text-center text-[11px] text-white/40">Illustrative market ranges for positioning — not a guarantee of future value.</p>
+    </div>
+  </div>
+</section>

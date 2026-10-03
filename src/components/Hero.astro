@@ -4,13 +4,23 @@ import { SITE } from '../config/site';
 
 <header class="hero-bg min-h-[100dvh] flex items-center relative pt-20">
   <div class="max-w-5xl mx-auto px-6 pb-16 pt-12 md:pt-8 text-center relative z-10">
-    <!-- Premium Badge -->
-    <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
-      <div class="w-1.5 h-1.5 bg-[#22f5ff] rounded-full animate-pulse"></div>
-      <span class="text-xs font-semibold tracking-[1.5px] text-white/80">MODERN AI SECURITY DOMAIN</span>
+    <!-- Premium Badge + urgency -->
+    <div class="flex flex-col items-center gap-3 mb-8">
+      <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5">
+        <div class="w-1.5 h-1.5 bg-[#22f5ff] rounded-full animate-pulse" aria-hidden="true"></div>
+        <span class="text-xs font-semibold tracking-[1.5px] text-white/80">MODERN AI SECURITY DOMAIN</span>
+      </div>
+      <p class="text-xs text-white/60 tracking-wide" role="status" aria-live="polite">
+        <span class="inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+          Available now — 1 of 1 asset
+          <span aria-hidden="true">•</span>
+          <span><span id="viewer-count">14</span> buyers viewing this week</span>
+        </span>
+      </p>
     </div>
 
-    <!-- Domain Name -->
+    <!-- Domain Name (H1) -->
     <h1 class="domain-text font-display mb-3 tracking-[-0.07em]">
       secureaiframeworks.xyz
     </h1>
@@ -21,40 +31,53 @@ import { SITE } from '../config/site';
       for secure AI frameworks.
     </p>
 
-    <p class="max-w-lg mx-auto text-lg sm:text-xl text-white/70 mb-10">
-      Forward-thinking. Tech-native.<br />
-      Built for the next generation of AI security.
-    </p>
+    <!-- Above-the-fold price + Buy Now (CRO) -->
+    <div class="mt-2 mb-8 flex flex-col items-center gap-2">
+      <p class="flex items-baseline justify-center gap-x-2">
+        <span class="text-4xl md:text-5xl font-semibold tracking-tighter">$9,997</span>
+        <span class="text-white/50 text-lg">USD</span>
+      </p>
+      <p class="text-sm text-white/60">One-time • Full ownership • Escrow-protected via Escrow.com</p>
+    </div>
 
-    <!-- CTAs -->
+    <!-- CTAs: Buy Now / Make Offer / Explore -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md sm:max-w-none mx-auto">
-      <a href="#inquire"
-         class="group w-full sm:w-auto inline-flex items-center justify-center gap-x-3 px-9 py-4 text-base sm:text-lg font-semibold rounded-3xl bg-gradient-to-r from-[#22f5ff] to-[#a855f7] text-[#0a0a0f] hover:brightness-105 active:scale-[0.985] transition-all shadow-xl shadow-[#22f5ff]/20">
-        <span>Secure This Asset</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="#pricing" data-track="cta-hero-buy-now"
+         class="group w-full sm:w-auto inline-flex items-center justify-center gap-x-3 px-9 py-4 min-h-[48px] text-base sm:text-lg font-semibold rounded-3xl bg-gradient-to-r from-[#22f5ff] to-[#a855f7] text-[#0a0a0f] hover:brightness-105 active:scale-[0.985] transition-all shadow-xl shadow-[#22f5ff]/20">
+        <span>Buy Now — $9,997</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M14 5l7 7-7 7m-4-7h11" />
         </svg>
       </a>
-      <a href="#positioning"
-         class="w-full sm:w-auto inline-flex items-center justify-center gap-x-2 px-8 py-4 text-base sm:text-lg font-medium rounded-3xl border border-white/20 hover:bg-white/5 transition-colors">
-        Explore the Opportunity
+      <a href="#inquire" data-track="cta-hero-make-offer"
+         class="w-full sm:w-auto inline-flex items-center justify-center gap-x-2 px-8 py-4 min-h-[48px] text-base sm:text-lg font-medium rounded-3xl border border-white/20 hover:bg-white/5 transition-colors">
+        Make an Offer
       </a>
     </div>
+    <p class="mt-4 text-xs text-white/50">
+      Serious buyers only • Flexible terms available •
+      <a href="#faq" class="underline underline-offset-4 hover:text-white/80">How buying works</a>
+    </p>
 
-    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/50">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/50">
       <div class="flex items-center gap-x-1.5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7" />
         </svg>
         <span>Instant Transfer</span>
       </div>
-      <div>Escrow Protected</div>
-      <div>Modern &amp; Forward-Thinking</div>
+      <div class="flex items-center gap-x-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.6 2A9 9 0 1112 3a9 9 0 018.6 9z" />
+        </svg>
+        <span>Escrow.com Protected</span>
+      </div>
+      <div>SSL Secured Checkout via Escrow</div>
     </div>
   </div>
 
   <!-- Subtle scroll indicator -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block" aria-hidden="true">
     <div class="flex flex-col items-center gap-y-1 text-[10px] tracking-widest text-white/40">
       <div>SCROLL TO BEGIN</div>
       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,0 +1,44 @@
+---
+// Content-marketing hub for Domain Authority: valuation guides, market trends,
+// success stories. Weekly-cadence teaser; full posts can ship as /blog/* later
+// without changing IA (internal linking anchors ready).
+const posts = [
+  {
+    tag: 'Valuation Guide',
+    title: 'How to value a secure-AI domain in 2026',
+    excerpt: 'Exact-match keywords, TLD appetite, comparables, and why escrow terms move price.',
+    href: '#inquire',
+  },
+  {
+    tag: 'Market Trends',
+    title: '.xyz in AI security: from novelty to tech-native signal',
+    excerpt: 'Why next-gen teams choose modern TLDs — and what it means for brand equity.',
+    href: '#why',
+  },
+  {
+    tag: 'Success Story',
+    title: 'From domain to category leader: a guardrails startup playbook',
+    excerpt: 'Positioning, launch sequencing, and branded-search wins after acquiring the right name.',
+    href: '#proof',
+  },
+];
+---
+
+<section id="insights" class="max-w-6xl mx-auto px-6 pb-20 reveal" aria-labelledby="insights-heading">
+  <div class="max-w-2xl mb-8">
+    <div class="inline-block px-3.5 py-1 rounded-full bg-white/5 text-xs tracking-[1.5px] font-medium text-white/60 mb-4">MARKET INSIGHTS</div>
+    <h2 id="insights-heading" class="section-header tracking-[-0.035em] leading-none">Learn the market. Own the category.</h2>
+    <p class="mt-3 text-white/60">Fresh weekly notes on domain valuation, AI-security branding, and premium-domain strategy.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-4">
+    {posts.map((p) => (
+      <a href={p.href} data-track="cta-insights-read" class="modern-card glass rounded-3xl p-8 block">
+        <div class="text-xs tracking-[1.5px] font-semibold text-[#22f5ff] mb-3">{p.tag.toUpperCase()}</div>
+        <h3 class="font-semibold text-xl tracking-tight mb-3">{p.title}</h3>
+        <p class="text-white/60 text-sm leading-relaxed">{p.excerpt}</p>
+        <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-white/80">Read the takeaway →</span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,8 +1,8 @@
 export const SITE = {
   name: 'secureaiframeworks.xyz',
-  title: 'secureaiframeworks.xyz — Premium Secure AI Frameworks Domain for Sale',
+  title: 'secureaiframeworks.xyz | Premium Domain for Sale | Secure AI Frameworks',
   description:
-    'secureaiframeworks.xyz is available for acquisition — the premium domain for secure AI frameworks, AI security platforms, and guardrails. Escrow-protected purchase at $9,997 USD.',
+    'secureaiframeworks.xyz for sale — premium domain for secure AI frameworks, AI security platforms & guardrails. $9,997 USD, Escrow-protected. Buy now or make an offer.',
   url: 'https://secureaiframeworks.xyz',
   email: 'sales@desertrich.com',
   locale: 'en_US',

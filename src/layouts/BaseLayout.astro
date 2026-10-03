@@ -23,7 +23,7 @@ const pathname = Astro.url.pathname === '/' || Astro.url.pathname === '/index.ht
     : `${Astro.url.pathname}/`;
 const canonicalURL = new URL(pathname, SITE.url).href;
 const publishedDate = '2026-07-01';
-const modifiedDate = '2026-09-22';
+const modifiedDate = '2026-10-03';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -47,11 +47,30 @@ const structuredData = {
       datePublished: publishedDate,
       dateModified: modifiedDate,
       inLanguage: 'en-US',
+      breadcrumb: { '@id': `${SITE.url}/#breadcrumb` },
       primaryImageOfPage: {
         '@type': 'ImageObject',
         url: SITE.ogImage,
         caption: SITE.ogImageAlt,
       },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE.url}/#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE.url}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Premium Domain for Sale',
+          item: `${SITE.url}/#pricing`,
+        },
+      ],
     },
     {
       '@type': 'Product',
@@ -71,9 +90,9 @@ const structuredData = {
         url: `${SITE.url}/#pricing`,
         price: SITE.price,
         priceCurrency: SITE.priceCurrency,
+        priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
-        priceValidUntil: '2027-12-31',
         seller: {
           '@type': 'Organization',
           name: SITE.name,
@@ -103,13 +122,15 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="theme-color" content="#0a0a0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
     {SITE.googleSiteVerification && (
       <meta name="google-site-verification" content={SITE.googleSiteVerification} />
     )}
@@ -129,6 +150,9 @@ const structuredData = {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={SITE.locale} />
+    <meta property="product:price:amount" content={SITE.price} />
+    <meta property="product:price:currency" content={SITE.priceCurrency} />
+    <meta property="product:availability" content="in stock" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -136,20 +160,41 @@ const structuredData = {
     <meta name="twitter:image" content={SITE.ogImage} />
     <meta name="twitter:image:alt" content={SITE.ogImageAlt} />
 
+    <meta name="keywords" content="buy xyz domains, premium domain names, secure AI frameworks domain, AI security domain for sale, investment domains, brandable tech domains" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
+    <!-- Performance: preconnect + async font load (non-blocking, display=swap) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://imagedelivery.net" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
-    <link rel="preload" as="image" href={SITE.ogImage} />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      />
+    </noscript>
+    <!-- LCP: hero image is a CSS background; preload the underlying asset -->
+    <link rel="preload" as="image" href={SITE.ogImage} fetchpriority="high" />
 
     <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <!-- Cloudflare Web Analytics (free plan): paste token below to enable privacy-first analytics.
+         https://developers.cloudflare.com/analytics/web-analytics/ -->
+    <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"REPLACE_ME"}'></script> -->
   </head>
   <body>
     <a
